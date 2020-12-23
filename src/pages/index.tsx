@@ -1,42 +1,27 @@
+// react import
 import React from "react";
+// gatsby modules import
 import { Link, graphql } from "gatsby";
+
+// global style
 import "../assets/css/global.css";
 
-import Layout from "../components/Layout/index"
-import StyledInput from "../components/Input"
-import CountryCard from "../components/CountryCard"
+// layout component
+import Layout from "../components/Layout/index";
 
-import Image from "../components/image"
-import styled from "styled-components"
-import SEO from "../components/seo"
-import { AiFillFlag } from "react-icons/ai"
 
-export const query = graphql`
-  query {
-    countriesapi {
-      Country {
-        name
-        flag{
-          svgFile
-        }
-      }
-    }
-  }
-`
+// components
+import CountriesDiv from "../components/CountriesDiv";
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    
-    <SEO title="Home" />
-    <StyledInput></StyledInput>
-    {data.countriesapi.Country.map(({name,flag,index }) => (
-      <>
-      <p>{name}</p>
-      <CountryCard image={flag.svgFile}/>
-      </>
-    ))}
+
+
+
+const IndexPage = () => (
   
+  <Layout>
+    <CountriesDiv/>
   </Layout>
+
 )
 
 export default IndexPage

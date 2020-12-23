@@ -3,15 +3,18 @@ import styled from 'styled-components';
 
 
 const Input = styled.input`
-  background-color: red;
-  width: 100%;
+  background-color: white;
+  border: solid #009EDB 2px;
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
   height: 30px;
 `;
 
-export default function StyledInput(){
+export default function StyledInput(props){
     return(
       <>
-        <Input/>
+        <Input onChange={e=>{props.search(e.target.value)}}/>
       </>
     )
 }

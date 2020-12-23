@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Card = styled.img`
+const CardImage = styled.img`
   width: 20rem;
   height: 7rem;
   margin-top: 2rem;
@@ -14,7 +14,7 @@ const Card = styled.img`
 export default function CountryCard(props){
     return(
       <>
-        <Card
+        <CardImage
           src={props.image}
           alt="MIT"
           data-sal="slide-up"
