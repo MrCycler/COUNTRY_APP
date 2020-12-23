@@ -1,5 +1,6 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import "../assets/css/global.css";
 
 import Layout from "../components/Layout/index"
 import StyledInput from "../components/Input"
