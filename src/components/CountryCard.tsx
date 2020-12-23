@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 
 const CardImage = styled.img`
-  width: 20rem;
-  height: 7rem;
+  width: 150px;
+  height: 80px;
   margin-top: 2rem;
   margin-bottom: 2rem;
   margin-right: auto;

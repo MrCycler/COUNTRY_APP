@@ -14,7 +14,7 @@ const Input = styled.input`
 export default function StyledInput(props){
     return(
       <>
-        <Input onChange={e=>{props.search(e.target.value)}}/>
+        <Input onChange={e=>{props.search(e.target.value)}} placeholder="Ingresar el nombre o el código del país"/>
       </>
     )
 }
