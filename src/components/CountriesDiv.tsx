@@ -6,13 +6,13 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from "gatsby"
 
 // components
-import StyledInput from "./Input"
+import StyledInput from "./Search"
 import CountryCard from "./CountryCard"
 
 const CountryCardsDiv = styled.div`
-    min-height:calc(100vh - 173.8px);
+    min-height:calc(100vh - 368.8px);
     @media (min-width: 800px) {
-        min-height:calc(100vh - 143px);
+        min-height:calc(100vh - 338px);
   }
 `
 

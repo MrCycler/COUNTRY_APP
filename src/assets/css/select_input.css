@@ -1,0 +1,102 @@
+.ris {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    font-size:12px;
+    margin-left: 10%;
+    margin-right:10% ;
+    width: 80%;
+  }
+  
+  .ris * {
+    box-sizing: border-box;
+   
+
+  }
+  
+  .ris.ris-is-clearable .ris-clearable {
+    position: absolute;
+    
+    top: 50%;
+    right: 5px;
+    font-size:1.1em;
+    margin-top:-1px;
+    transform: translate(0, -50%);
+    padding:5px;
+    color: #555;
+    cursor:pointer;
+  }
+  
+  .ris.ris-is-creatable .ris-input {
+    padding-right:15px;
+  }
+  
+  .ris .ris-input {
+    display: block;
+    resize: none;
+   
+   
+    width: 100%;
+    padding: 5px;
+    border: 5px solid #eee;
+    border-radius: 5px;
+    font-size:inherit;
+  }
+  
+  .ris .ris-input:active, .ris .ris-input:focus {
+    outline: 0;
+    border: 5px solid #E1E2E1; 
+  }
+  
+  .ris.ris-open-up .ris-options {
+    top:0;
+    transform:translate(-50%,-100%);
+  }
+  
+  .ris .ris-options {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+    margin:0;
+    
+    width: calc(100% - 10px);
+    background: #fff;
+    transform:translate(-50%, 0);
+    border: 1px solid #eee;
+    overflow: auto;
+    box-shadow: 0 2px 3px 1px #eee;
+    max-height:245px;
+    font-size:inherit;
+  }
+  
+  .ris .ris-options .ris-option {
+    padding: 5px;
+    cursor: pointer;
+    
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .ris .ris-options .ris-option:last-child {
+    border-bottom: 0;
+  }
+  
+  .ris .ris-options .ris-option:hover {
+    background: #bbdefb;
+  }
+  
+  .ris .ris-options .ris-option.current {
+    background:#bbdefb;
+  }
+  
+  .ris .ris-options .ris-option.selected {
+    background:#495A65;
+    color: #fff;
+  }
+  
+  .ris .ris-options.ris-no-options {
+    padding:5px;
+    text-align:center;
+    color:#ccc;
+  }
+  

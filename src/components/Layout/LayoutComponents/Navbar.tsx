@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const StyledNavbar = styled.div`
   width: 100%;
-  background: #181B32;
+  background:#20313B;
   padding-top:1rem;
   padding-bottom:1rem;
   display: flex;
