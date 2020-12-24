@@ -12,7 +12,7 @@ const CardImage = styled.img`
 
 export default function CountryCard(props) {
   return (
-    <>
+
       <CardImage
         src={props.image}
         alt="MIT"
@@ -21,6 +21,6 @@ export default function CountryCard(props) {
         data-sal-duration="1000"
         data-sal-easing="ease-in-out"
       />
-    </>
+
   )
 }
