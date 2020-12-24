@@ -111,14 +111,25 @@ export default function CountriesDiv() {
       />
       <CountryCardsDiv>
         {filteredCountries.map(({   name, alpha2Code, flag}) => (
-          <Link to={"/countries/"+name} asModal key={name}>
-          <CountryCard
-            name={name}
-            code={alpha2Code}
-            image={flag.svgFile}
-          /></Link>
+         
+         <Link to={"/countries/"+name} asModal key={name}>
+         <CountryCard
+                     name={name}
+                     code={alpha2Code}
+                     image={flag.svgFile}
+                   />
+         </Link>
         ))}
       </CountryCardsDiv>
     </>
   )
 }
+
+/*
+<Link to={"/countries/"+name} asModal key={name}>
+<CountryCard
+            name={name}
+            code={alpha2Code}
+            image={flag.svgFile}
+          />
+</Link>*/

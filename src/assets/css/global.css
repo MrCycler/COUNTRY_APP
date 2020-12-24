@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html {
@@ -14,6 +15,13 @@ html {
   font-size: 400;
   word-spacing: 1px;
 }
+
+
+/*
+  @media screen and (max-width:800px){
+    body{width:143vh}
+  }*/
+  
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
