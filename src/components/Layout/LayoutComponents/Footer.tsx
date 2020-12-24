@@ -31,18 +31,18 @@ const Copyrigth = styled.div`
   justify-content: center;
   @media (min-width: 350px) {
     font-size: 12px;
-    width: 70rem;
-    justify-content: left;
+    width: 100%;
+    justify-content: center;
   }
   @media (min-width: 800px) {
     font-size: 14px;
-    width: 70rem;
+    width: 60%;
     justify-content: left;
   }
 `
 
 const Social = styled.div`
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5rem;
@@ -51,8 +51,13 @@ const Social = styled.div`
   color: #767b8a;
   display: flex;
   justify-content: space-around;
+  @media (min-width: 350px) {
+    width: 70%;
+    
+    justify-content: space-around;
+  }
   @media (min-width: 800px) {
-    width: 30rem;
+    width: 30%;
     justify-content: space-around;
   }
 `

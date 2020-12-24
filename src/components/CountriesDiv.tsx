@@ -124,12 +124,3 @@ export default function CountriesDiv() {
     </>
   )
 }
-
-/*
-<Link to={"/countries/"+name} asModal key={name}>
-<CountryCard
-            name={name}
-            code={alpha2Code}
-            image={flag.svgFile}
-          />
-</Link>*/
