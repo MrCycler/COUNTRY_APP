@@ -67,22 +67,26 @@ export default function CountriesDiv() {
     data.countriesapi.Country
   )
 
-  //hook to filter countries with a graphql
+  //hook to filter countries
   React.useMemo(() => {
-    let result_region = data.countriesapi.Country.filter(({ subregion}) => {     
-      return `${subregion?.region?.name}`.includes(region);
+    let result_region = data.countriesapi.Country.filter(({ subregion }) => {
+      return `${subregion?.region?.name}`.includes(region)
     })
 
-    let result_language =  result_region.filter(({officialLanguages}) => {
+    let result_language = result_region.filter(({ officialLanguages }) => {
       let languagestxt = ""
-      officialLanguages.forEach((value)=>{languagestxt=languagestxt+` ${value.name}`})
-      return `${languagestxt}`.includes(language);
+      officialLanguages.forEach(value => {
+        languagestxt = languagestxt + ` ${value.name}`
+      })
+      return `${languagestxt}`.includes(language)
     })
 
-    let result =  result_language.filter(({currencies}) => {
+    let result = result_language.filter(({ currencies }) => {
       let currenciestxt = ""
-      currencies.forEach((value)=>{currenciestxt=currenciestxt+` ${value.code}`})
-      return `${currenciestxt}`.includes(currency);
+      currencies.forEach(value => {
+        currenciestxt = currenciestxt + ` ${value.code}`
+      })
+      return `${currenciestxt}`.includes(currency)
     })
 
     setCountries(result)

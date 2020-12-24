@@ -39,10 +39,10 @@ const NavbarTitle = styled.div`
 const CardImage = styled.img`
   width: 150px;
   height: 80px;
-  display:none;
+  display: none;
 
   @media (min-width: 600px) {
-    display:block;
+    display: block;
   }
 `
 

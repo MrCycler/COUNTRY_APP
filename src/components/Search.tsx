@@ -110,6 +110,9 @@ export default function StyledInput(props) {
           onSelect={option => {
             props.setCurrency(option.value)
           }}
+          onClear={() => {
+            props.setCurrency("")
+          }}
           options={curriencies}
           autoFocus={false}
           placeholder="Ingrese moneda"
@@ -124,6 +127,9 @@ export default function StyledInput(props) {
           onSelect={option => {
             props.setLanguage(option.value)
           }}
+          onClear={() => {
+            props.setLanguage("")
+          }}
           options={languages}
           autoFocus={false}
           placeholder="Ingrese idioma"
@@ -137,6 +143,9 @@ export default function StyledInput(props) {
         <SelectInput
           onSelect={option => {
             props.setRegion(option.value)
+          }}
+          onClear={() => {
+            props.setRegion("")
           }}
           options={regions}
           autoFocus={false}

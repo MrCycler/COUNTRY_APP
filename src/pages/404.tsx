@@ -7,7 +7,7 @@ import ErrorDiv from "../components/ErrorDiv"
 
 const NotFoundPage = () => (
   <Layout>
-    <ErrorDiv/>
+    <ErrorDiv />
   </Layout>
 )
 

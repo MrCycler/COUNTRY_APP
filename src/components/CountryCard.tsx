@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const CardImage = styled.img`
   width: 150px;
@@ -10,17 +10,17 @@ const CardImage = styled.img`
   margin-left: auto;
 `
 
-export default function CountryCard(props){
-    return(
-      <>
-        <CardImage
-          src={props.image}
-          alt="MIT"
-          data-sal="slide-up"
-          data-sal-delay="100"
-          data-sal-duration="1000"
-          data-sal-easing="ease-in-out"
-        />
-      </>
-    )
+export default function CountryCard(props) {
+  return (
+    <>
+      <CardImage
+        src={props.image}
+        alt="MIT"
+        data-sal="slide-up"
+        data-sal-delay="100"
+        data-sal-duration="1000"
+        data-sal-easing="ease-in-out"
+      />
+    </>
+  )
 }
