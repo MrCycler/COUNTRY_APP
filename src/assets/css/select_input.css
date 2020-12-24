@@ -3,9 +3,10 @@
     position: relative;
     box-sizing: border-box;
     font-size:12px;
-    margin-left: 10%;
-    margin-right:10% ;
-    width: 80%;
+    margin-left: 5%;
+    margin-right:5% ;
+    margin-bottom: 1rem;
+    width: 90%;
   }
   
   .ris * {
@@ -59,7 +60,7 @@
     top: 100%;
     left: 50%;
     margin:0;
-    
+    z-index: 90;
     width: calc(100% - 10px);
     background: #fff;
     transform:translate(-50%, 0);

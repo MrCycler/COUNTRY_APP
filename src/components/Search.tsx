@@ -11,14 +11,17 @@ import "../assets/css/select_input.css"
 const SearchDiv = styled.div`
   background-color: #495a65;
   width: 100%;
-  padding-bottom: 1rem;
-
+  padding-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
+  grid-template-columns: repeat(1, 1fr);
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: calc(80px + 2rem);
+  top: calc(22px + 2rem);
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+    top: calc(80px + 2rem);
+  }
 `
 
 const Input = styled.input`
@@ -27,14 +30,16 @@ const Input = styled.input`
   padding: 5px;
   background-color: white;
   border: solid #eeeeee 2px;
-  width: 80%;
-  grid-column: 1 / 4;
+  width: 90%;
   grid-row: 1;
-  margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 30px;
+
+  @media (min-width: 600px) {
+    grid-column: 1 / 4;
+  }
 `
 
 export default function StyledInput(props) {
@@ -66,7 +71,7 @@ export default function StyledInput(props) {
     ({ name }) => name != "null"
   ).map(({ name, code, symbol }) => {
     return {
-      label: `${name} ${symbol !== "null" ? "(" + symbol + ")" : ""}`,
+      label: `${name} ${symbol !== "null" ? symbol : ""}`,
       value: code,
     }
   })
@@ -75,7 +80,7 @@ export default function StyledInput(props) {
   const languages = data.countriesapi.Language.filter(
     ({ name }) => name != "null"
   ).map(({ name, nativeName }) => {
-    return { label: `${name} (${nativeName})`, value: name }
+    return { label: `${name} ${nativeName}`, value: name }
   })
 
   //region map

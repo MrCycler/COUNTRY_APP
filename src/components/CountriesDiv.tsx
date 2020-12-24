@@ -10,12 +10,15 @@ import StyledInput from "./Search"
 import CountryCard from "./CountryCard"
 
 const CountryCardsDiv = styled.div`
-  min-height: calc(100vh - 368px);
+  min-height: calc(100vh - 411px);
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
   gap: 10px;
+  @media (min-width: 600px) {
+    min-height: calc(100vh - 369px);
+  }
   @media (min-width: 800px) {
     min-height: calc(100vh - 337px);
   }
