@@ -13,7 +13,7 @@ const BaseDiv= styled.div`
 export default function Layout(props) {
   return (
     <>
-      
+        <Navbar/>
         <BaseDiv>{props.children}</BaseDiv>
         <Footer/>
     </>

@@ -25,12 +25,13 @@ const FooterDiv = styled.div`
 const Copyrigth = styled.div`
   width: 100%;
   margin-top: 0.8rem;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   color: white;
   display: flex;
   justify-content: center;
   @media (min-width: 800px) {
+    font-size: 14px;
     width: 70rem;
     justify-content: left;
   }

@@ -2,7 +2,6 @@
 import React from "react"
 // styled components module import
 import styled from 'styled-components';
-
 // gatsby modules import
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -11,7 +10,10 @@ import StyledInput from "./Input"
 import CountryCard from "./CountryCard"
 
 const CountryCardsDiv = styled.div`
-    min-height:calc(100vh - 143px);
+    min-height:calc(100vh - 173.8px);
+    @media (min-width: 800px) {
+        min-height:calc(100vh - 143px);
+  }
 `
 
 export default function CountriesDiv() {
@@ -48,11 +50,15 @@ export default function CountriesDiv() {
     <>
       <StyledInput search={setQuery}/>
       <CountryCardsDiv>
-      {filteredCountries.map(({ name,alpha2Code,flag, index }) => (
+   
+{filteredCountries.map(({ name,alpha2Code,flag, index }) => (
         <>
           <CountryCard name={name} code={alpha2Code} image={flag.svgFile} />
         </>
-      ))}</CountryCardsDiv>
+      ))}
+
+      
+      </CountryCardsDiv>
     </>
   )
 }
