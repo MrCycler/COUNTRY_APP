@@ -1,7 +1,7 @@
 // react import
 import React from "react"
 // styled components module import
-import styled from 'styled-components';
+import styled from "styled-components"
 // gatsby modules import
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -10,54 +10,57 @@ import StyledInput from "./Search"
 import CountryCard from "./CountryCard"
 
 const CountryCardsDiv = styled.div`
-    min-height:calc(100vh - 368.8px);
-    @media (min-width: 800px) {
-        min-height:calc(100vh - 338px);
+  min-height: calc(100vh - 368px);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  gap: 10px;
+  @media (min-width: 800px) {
+    min-height: calc(100vh - 337px);
   }
 `
 
 export default function CountriesDiv() {
-    //graphql query
-    const data = useStaticQuery(graphql`
-        query {
-        countriesapi {
-            Country {
-            name
-            alpha2Code
-            flag {
-                svgFile
-            }
-            }
+  //graphql query
+  const data = useStaticQuery(graphql`
+    query {
+      countriesapi {
+        Country {
+          name
+          alpha2Code
+          flag {
+            svgFile
+          }
         }
-        }
-    `)
+      }
+    }
+  `)
 
-    //input value (query)
-    const [query, setQuery] = React.useState('');
-    //filtered countries
-    const [filteredCountries, setFilteredCountries] = React.useState(data.countriesapi.Country);
-  
-    //hook to filter countries
-    React.useMemo(() => {
-        const result = data.countriesapi.Country.filter(({name,alpha2Code}) => {
-          return `${name} ${alpha2Code}`.toLowerCase()
-            .includes(query.toLowerCase());
-        });
-        setFilteredCountries(result);
-      }, [data.countriesapi.Country, query]);
-    
+  //input value (query)
+  const [query, setQuery] = React.useState("")
+  //filtered countries
+  const [filteredCountries, setFilteredCountries] = React.useState(
+    data.countriesapi.Country
+  )
+
+  //hook to filter countries
+  React.useMemo(() => {
+    const result = data.countriesapi.Country.filter(({ name, alpha2Code }) => {
+      return `${name} ${alpha2Code}`.toLowerCase().includes(query.toLowerCase())
+    })
+    setFilteredCountries(result)
+  }, [data.countriesapi.Country, query])
+
   return (
     <>
-      <StyledInput search={setQuery}/>
+      <StyledInput search={setQuery} />
       <CountryCardsDiv>
-   
-{filteredCountries.map(({ name,alpha2Code,flag, index }) => (
-        <>
-          <CountryCard name={name} code={alpha2Code} image={flag.svgFile} />
-        </>
-      ))}
-
-      
+        {filteredCountries.map(({ name, alpha2Code, flag, index }) => (
+          <>
+            <CountryCard name={name} code={alpha2Code} image={flag.svgFile} />
+          </>
+        ))}
       </CountryCardsDiv>
     </>
   )

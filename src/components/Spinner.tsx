@@ -14,6 +14,8 @@ const SpinnerDiv = styled.div`
 `
 const SpinnerImg = styled.img`
     margin:auto;
+    width:40vh;
+    height:40vh;
 `
 
 const Spinner = () => 

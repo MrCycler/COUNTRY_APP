@@ -9,9 +9,9 @@ import SelectInput from "react-select-input"
 import "../assets/css/select_input.css"
 
 const SearchDiv = styled.div`
-  background-color: #495A65;
+  background-color: #495a65;
   width: 100%;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,8 +22,11 @@ const SearchDiv = styled.div`
 `
 
 const Input = styled.input`
+  border: 5px solid #eee;
+  border-radius: 5px;
+  padding: 5px;
   background-color: white;
-  border: solid #EEEEEE 2px;
+  border: solid #eeeeee 2px;
   width: 80%;
   grid-column: 1 / 4;
   grid-row: 1;
@@ -97,6 +100,7 @@ export default function StyledInput(props) {
           }}
           options={curriencies}
           autoFocus={false}
+          placeholder="Ingrese moneda"
           openUp={false}
           disableEnter={true}
           collapseOnBlur={true}
@@ -110,6 +114,7 @@ export default function StyledInput(props) {
           }}
           options={languages}
           autoFocus={false}
+          placeholder="Ingrese idioma"
           openUp={false}
           disableEnter={true}
           collapseOnBlur={true}
@@ -123,6 +128,7 @@ export default function StyledInput(props) {
           }}
           options={regions}
           autoFocus={false}
+          placeholder="Ingrese región"
           openUp={false}
           disableEnter={true}
           collapseOnBlur={true}
