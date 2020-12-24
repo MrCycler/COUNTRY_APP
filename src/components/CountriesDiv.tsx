@@ -10,7 +10,7 @@ import StyledInput from "./Search"
 import CountryCard from "./CountryCard"
 
 const CountryCardsDiv = styled.div`
-  min-height: calc(100vh - 411px);
+  min-height: calc(100vh - 413px);
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -20,7 +20,7 @@ const CountryCardsDiv = styled.div`
     min-height: calc(100vh - 369px);
   }
   @media (min-width: 800px) {
-    min-height: calc(100vh - 337px);
+    min-height: calc(100vh - 338px);
   }
 `
 
@@ -35,6 +35,18 @@ export default function CountriesDiv() {
           flag {
             svgFile
           }
+          subregion {
+            name
+            region {
+              name
+            }
+          }
+          officialLanguages {
+            name
+          }
+          currencies {
+            code
+          }
         }
       }
     }
@@ -42,22 +54,56 @@ export default function CountriesDiv() {
 
   //input value (query)
   const [query, setQuery] = React.useState("")
+  //filters value (query)
+  const [currency, setCurrency] = React.useState("")
+  const [language, setLanguage] = React.useState("")
+  const [region, setRegion] = React.useState("")
+
+  //original group of countries
+  const [countries, setCountries] = React.useState(data.countriesapi.Country)
+
   //filtered countries
   const [filteredCountries, setFilteredCountries] = React.useState(
     data.countriesapi.Country
   )
 
-  //hook to filter countries
+  //hook to filter countries with a graphql
   React.useMemo(() => {
-    const result = data.countriesapi.Country.filter(({ name, alpha2Code }) => {
+    let result_region = data.countriesapi.Country.filter(({ subregion}) => {     
+      return `${subregion?.region?.name}`.includes(region);
+    })
+
+    let result_language =  result_region.filter(({officialLanguages}) => {
+      let languagestxt = ""
+      officialLanguages.forEach((value)=>{languagestxt=languagestxt+` ${value.name}`})
+      return `${languagestxt}`.includes(language);
+    })
+
+    let result =  result_language.filter(({currencies}) => {
+      let currenciestxt = ""
+      currencies.forEach((value)=>{currenciestxt=currenciestxt+` ${value.code}`})
+      return `${currenciestxt}`.includes(currency);
+    })
+
+    setCountries(result)
+  }, [currency, language, region])
+
+  //hook to search in countries (name & alpha2Code)
+  React.useMemo(() => {
+    const result = countries.filter(({ name, alpha2Code }) => {
       return `${name} ${alpha2Code}`.toLowerCase().includes(query.toLowerCase())
     })
     setFilteredCountries(result)
-  }, [data.countriesapi.Country, query])
+  }, [countries, query])
 
   return (
     <>
-      <StyledInput search={setQuery} />
+      <StyledInput
+        search={setQuery}
+        setCurrency={setCurrency}
+        setLanguage={setLanguage}
+        setRegion={setRegion}
+      />
       <CountryCardsDiv>
         {filteredCountries.map(({ name, alpha2Code, flag, index }) => (
           <>

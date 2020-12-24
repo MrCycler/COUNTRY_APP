@@ -36,9 +36,16 @@ const Input = styled.input`
   margin-left: 5%;
   margin-right: 5%;
   height: 30px;
+  font-family: Archivo, sans-serif;
+  font-style: normal;
+  font-weight: bold;
 
   @media (min-width: 600px) {
     grid-column: 1 / 4;
+  }
+
+  &:focus {
+    outline-color: #e1e2e1;
   }
 `
 
@@ -100,8 +107,8 @@ export default function StyledInput(props) {
           placeholder="Ingresar el nombre o el código del país"
         />
         <SelectInput
-          onSelect={() => {
-            console.log("ga")
+          onSelect={option => {
+            props.setCurrency(option.value)
           }}
           options={curriencies}
           autoFocus={false}
@@ -114,8 +121,8 @@ export default function StyledInput(props) {
           cleareble={false}
         />
         <SelectInput
-          onSelect={() => {
-            console.log("ga")
+          onSelect={option => {
+            props.setLanguage(option.value)
           }}
           options={languages}
           autoFocus={false}
@@ -128,8 +135,8 @@ export default function StyledInput(props) {
           cleareble={false}
         />
         <SelectInput
-          onSelect={() => {
-            console.log("ga")
+          onSelect={option => {
+            props.setRegion(option.value)
           }}
           options={regions}
           autoFocus={false}
