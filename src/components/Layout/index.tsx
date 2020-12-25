@@ -1,4 +1,6 @@
+// react import
 import React from "react"
+// styled components module import
 import styled from "styled-components"
 
 import Navbar from "./LayoutComponents/Navbar"
