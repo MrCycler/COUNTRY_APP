@@ -3,7 +3,8 @@ import React from "react"
 // styled components module import
 import styled from "styled-components"
 
-import { graphql, useStaticQuery, Link, navigate } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import { Redirect } from '@reach/router'
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
 
 import Navbar from "../../components/Layout/LayoutComponents/Navbar"
@@ -138,7 +139,7 @@ export default function CountryModal(props) {
       return alpha2Code === props.name
     })
     if (!result[0]) {
-      return navigate("/404")
+      return  <Redirect to={`/404`} />
     }
     setCountry(result[0])
   }, [props])
