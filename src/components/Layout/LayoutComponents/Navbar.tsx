@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 // gatsby modules import
 import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link as ModalLink } from "gatsby-plugin-modal-routing"
 
 const StyledNavbar = styled.div`
   width: 100%;
@@ -61,6 +62,8 @@ export default function Navbar() {
     query {
       countriesapi {
         Country {
+          name
+          alpha2Code
           flag {
             svgFile
           }
@@ -87,7 +90,12 @@ export default function Navbar() {
       <StyledLink to="/">
         <NavbarTitle>BUSCADOR DE PAISES</NavbarTitle>
       </StyledLink>
-      <CardImage src={data.countriesapi.Country[loading].flag.svgFile} />
+      <ModalLink
+        to={"/countries/" + data.countriesapi.Country[loading].alpha2Code}
+        asModal
+      >
+        <CardImage src={data.countriesapi.Country[loading].flag.svgFile} />
+      </ModalLink>
     </StyledNavbar>
   )
 }

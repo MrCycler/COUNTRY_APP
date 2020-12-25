@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // components
 import StyledInput from "./Search"
 import CountryCard from "./CountryCard"
-import { Link } from 'gatsby-plugin-modal-routing'
+import { Link } from "gatsby-plugin-modal-routing"
 
 const CountryCardsDiv = styled.div`
   min-height: calc(100vh - 413px);
@@ -110,15 +110,10 @@ export default function CountriesDiv() {
         setRegion={setRegion}
       />
       <CountryCardsDiv>
-        {filteredCountries.map(({   name, alpha2Code, flag}) => (
-         
-         <Link to={"/countries/"+name} asModal key={name}>
-         <CountryCard
-                     name={name}
-                     code={alpha2Code}
-                     image={flag.svgFile}
-                   />
-         </Link>
+        {filteredCountries.map(({ name, alpha2Code, flag }) => (
+          <Link to={"/countries/" + alpha2Code} asModal key={name}>
+            <CountryCard name={name} code={alpha2Code} image={flag.svgFile} />
+          </Link>
         ))}
       </CountryCardsDiv>
     </>
