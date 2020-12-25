@@ -14,10 +14,10 @@ const CountryInfoDiv = styled.div`
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
   @media (min-width: 800px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 `
 
@@ -138,7 +138,7 @@ export default function CountryModal(props) {
     const result = data.countriesapi.Country.filter(({ alpha2Code }) => {
       return alpha2Code === props.name
     })
-    
+
     setCountry(result[0])
   }, [props])
 
@@ -148,107 +148,110 @@ export default function CountryModal(props) {
         <>
           {modal ? <></> : <Navbar />}
 
-          {country?<CountryInfoDiv>
-            <ControlDiv>
-              {modal ? (
-                <Link to={closeTo}>
-                  <CloseButtom>X</CloseButtom>
-                </Link>
-              ) : (
-                <></>
-              )}
-            </ControlDiv>
-            <div>
-              <CountryTitle>
-                {country.name +
-                  " (" +
-                  country.alpha2Code +
-                  ")" +
-                  " (" +
-                  country.alpha3Code +
-                  ")"}
-              </CountryTitle>
+          {country ? (
+            <CountryInfoDiv>
+              <ControlDiv>
+                {modal ? (
+                  <Link to={closeTo}>
+                    <CloseButtom>X</CloseButtom>
+                  </Link>
+                ) : (
+                  <></>
+                )}
+              </ControlDiv>
+              <div>
+                <CountryTitle>
+                  {country.name +
+                    " (" +
+                    country.alpha2Code +
+                    ")" +
+                    " (" +
+                    country.alpha3Code +
+                    ")"}
+                </CountryTitle>
 
-              <CountryImage src={country.flag.svgFile} alt="modalflag" />
-            </div>
-            <div>
-              <CountryLabel>
-                <b>Nombre original: </b>
-                {country.nativeName}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Área: </b>
-                {country.area ? country.area + " m2" : ""}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Población: </b>
-                {country.population + " hab"}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Capital: </b>
-                {country.capital}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Gentilicio: </b>
-                {country.demonym}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Ubicación: </b>
-                {country.location.latitude.toFixed(3) +
-                  "º, " +
-                  country.location.longitude.toFixed(3) +
-                  "º"}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Código: </b>
-                {country.numericCode}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Región: </b>
-                {country.subregion?.region?.name +
-                  " (" +
-                  country.subregion?.name +
-                  ")"}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Códigos Telefónicos: </b>
-                {country.callingCodes
-                  .map(callingCode => callingCode.name)
-                  .toString()}
-              </CountryLabel>
-              <CountryLabel>
-                <b>Dominios Web: </b>
-                {country.topLevelDomains
-                  .map(topLevelDomain => topLevelDomain.name)
-                  .toString()}
-              </CountryLabel>
+                <CountryImage src={country.flag.svgFile} alt="modalflag" />
+              </div>
+              <div>
+                <CountryLabel>
+                  <b>Nombre original: </b>
+                  {country.nativeName}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Área: </b>
+                  {country.area ? country.area + " m2" : ""}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Población: </b>
+                  {country.population + " hab"}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Capital: </b>
+                  {country.capital}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Gentilicio: </b>
+                  {country.demonym}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Ubicación: </b>
+                  {country.location.latitude.toFixed(3) +
+                    "º, " +
+                    country.location.longitude.toFixed(3) +
+                    "º"}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Código: </b>
+                  {country.numericCode}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Región: </b>
+                  {country.subregion?.region?.name +
+                    " (" +
+                    country.subregion?.name +
+                    ")"}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Códigos Telefónicos: </b>
+                  {country.callingCodes
+                    .map(callingCode => callingCode.name)
+                    .toString()}
+                </CountryLabel>
+                <CountryLabel>
+                  <b>Dominios Web: </b>
+                  {country.topLevelDomains
+                    .map(topLevelDomain => topLevelDomain.name)
+                    .toString()}
+                </CountryLabel>
 
-              <CountryLabel>
-                <b>Lenguajes: </b>
-                {country.officialLanguages
-                  .map(officialLanguage => officialLanguage.name)
-                  .toString()}
-              </CountryLabel>
+                <CountryLabel>
+                  <b>Lenguajes: </b>
+                  {country.officialLanguages
+                    .map(officialLanguage => officialLanguage.name)
+                    .toString()}
+                </CountryLabel>
 
-              <CountryLabel>
-                <b>Sinónimos: </b>
-                {country.alternativeSpellings
-                  .map(alternativeSpelling => alternativeSpelling.name)
-                  .toString()}
-              </CountryLabel>
+                <CountryLabel>
+                  <b>Sinónimos: </b>
+                  {country.alternativeSpellings
+                    .map(alternativeSpelling => alternativeSpelling.name)
+                    .toString()}
+                </CountryLabel>
 
-              <CountryLabel>
-                <b>Bloques ecónomicos: </b>
-                {country.regionalBlocs
-                  .map(
-                    regionalBloc =>
-                      regionalBloc.name + " (" + regionalBloc.acronym + ")"
-                  )
-                  .toString()}
-              </CountryLabel>
-            </div>
-          </CountryInfoDiv>
-          :<ErrorDiv />}
+                <CountryLabel>
+                  <b>Bloques ecónomicos: </b>
+                  {country.regionalBlocs
+                    .map(
+                      regionalBloc =>
+                        regionalBloc.name + " (" + regionalBloc.acronym + ")"
+                    )
+                    .toString()}
+                </CountryLabel>
+              </div>
+            </CountryInfoDiv>
+          ) : (
+            <ErrorDiv />
+          )}
 
           {modal ? <></> : <Footer />}
         </>

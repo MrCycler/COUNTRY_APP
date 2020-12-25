@@ -53,7 +53,7 @@ const Social = styled.div`
   justify-content: space-around;
   @media (min-width: 350px) {
     width: 70%;
-    
+
     justify-content: space-around;
   }
   @media (min-width: 800px) {

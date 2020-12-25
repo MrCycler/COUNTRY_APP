@@ -26,8 +26,8 @@ const ErrorMsg = styled.h2`
 const ErrorImage = styled.img`
   width: 80px;
   height: 80px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 export default function ErrorDiv() {

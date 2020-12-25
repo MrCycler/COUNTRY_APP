@@ -14,11 +14,10 @@ const CardImage = styled.img`
 `
 const CardName = styled.p`
   text-decoration: none !important;
-  
 `
 const CardDiv = styled.div`
   border: #495a65 solid 1px;
-  background-color:#EEEEEE;
+  background-color: #eeeeee;
   width: 250px;
   height: 250px;
   padding: 0.5rem;

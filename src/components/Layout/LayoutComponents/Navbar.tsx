@@ -15,7 +15,7 @@ const StyledNavbar = styled.div`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-  z-index:2;
+  z-index: 2;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;

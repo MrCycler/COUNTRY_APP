@@ -16,7 +16,7 @@ const CountryCardsDiv = styled.div`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-  padding:1rem;
+  padding: 1rem;
   gap: 10px;
   @media (min-width: 600px) {
     min-height: calc(100vh - 369px);
@@ -30,12 +30,11 @@ const StyledLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color:#20313B;
+  color: #20313b;
 `
-
 
 export default function CountriesDiv() {
   //graphql query
