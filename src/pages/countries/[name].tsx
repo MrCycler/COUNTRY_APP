@@ -84,6 +84,8 @@ export default function CountryModal(props) {
       {({ modal, closeTo }) => (
         <div>
           {modal ? <Link to={closeTo}>Close</Link> : <Link to="/">Close</Link>}
+          <h1>{country.name}</h1>
+          <h1>{country.nativeName}</h1>
         </div>
       )}
     </ ModalRoutingContext.Consumer >

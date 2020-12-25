@@ -16,6 +16,7 @@ const CountryCardsDiv = styled.div`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
+  padding:1rem;
   gap: 10px;
   @media (min-width: 600px) {
     min-height: calc(100vh - 369px);
@@ -24,6 +25,17 @@ const CountryCardsDiv = styled.div`
     min-height: calc(100vh - 338px);
   }
 `
+
+const StyledLink = styled(Link)`
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  color:#20313B;
+`
+
 
 export default function CountriesDiv() {
   //graphql query
@@ -111,9 +123,9 @@ export default function CountriesDiv() {
       />
       <CountryCardsDiv>
         {filteredCountries.map(({ name, alpha2Code, flag }) => (
-          <Link to={"/countries/" + alpha2Code} asModal key={name}>
+          <StyledLink to={"/countries/" + alpha2Code} asModal key={name}>
             <CountryCard name={name} code={alpha2Code} image={flag.svgFile} />
-          </Link>
+          </StyledLink>
         ))}
       </CountryCardsDiv>
     </>

@@ -9,6 +9,7 @@ const CardImage = styled.img`
   margin-right: auto;
   margin-left: auto;
   z-index: 1;
+
   animation: 2s ease-out 0s 1 slideInFromLeft;
 
   @keyframes slideInFromLeft {
@@ -20,12 +21,29 @@ const CardImage = styled.img`
   }
 }
 `
+const CardName = styled.p`
+text-decoration: none !important;
+`
+const CardDiv = styled.div`
+  border:#495A65 solid 1px;
+  width:200px;
+  height:200px;
+  padding:0.5rem;
+  border-radius:10px;
+  &:hover {
+    color:#8499a5 ;
+    padding:0rem;
+  }
+`
 
 export default function CountryCard(props) {
   return (
+    <CardDiv>
     <CardImage
       src={props.image}
       alt="country"           
     />
+    <CardName>{props.name+" ("+props.code+")"}</CardName>
+    </CardDiv>
   )
 }
