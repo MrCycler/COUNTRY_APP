@@ -15,7 +15,7 @@ const StyledNavbar = styled.div`
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-
+  z-index:2;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -82,7 +82,7 @@ export default function Navbar() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(Math.floor(Math.random() * data.countriesapi.Country.length))
-    }, 1000)
+    }, 2000)
   })
 
   return (

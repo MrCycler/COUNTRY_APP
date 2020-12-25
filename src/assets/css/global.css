@@ -1,11 +1,9 @@
-  
-@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url("https://fonts.googleapis.com/css?family=Archivo");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 html {
@@ -16,12 +14,9 @@ html {
   word-spacing: 1px;
 }
 
-
-/*
-  @media screen and (max-width:800px){
-    body{width:143vh}
-  }*/
-  
+.ReactModal__Overlay {
+  z-index: 4;
+}
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -31,6 +26,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

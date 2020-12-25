@@ -16,6 +16,7 @@ const SearchDiv = styled.div`
   grid-template-columns: repeat(1, 1fr);
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  z-index:2;
   top: calc(22px + 2rem);
 
   @media (min-width: 600px) {

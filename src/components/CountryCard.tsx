@@ -1,5 +1,9 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const CardImage = styled.img`
   width: 150px;
@@ -8,18 +12,18 @@ const CardImage = styled.img`
   margin-bottom: 2rem;
   margin-right: auto;
   margin-left: auto;
+  z-index:1;
 `
 
 export default function CountryCard(props) {
   return (
-
+    
       <CardImage
         src={props.image}
         alt="MIT"
-        data-sal="slide-up"
-        data-sal-delay="100"
-        data-sal-duration="1000"
-        data-sal-easing="ease-in-out"
+        data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1500"
       />
 
   )

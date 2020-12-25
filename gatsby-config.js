@@ -42,7 +42,7 @@ module.exports = {
     //styled components (https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/) 
     `gatsby-plugin-styled-components`,
     //gatsby modals with routing (https://www.gatsbyjs.com/plugins/gatsby-plugin-modal-routing/)
-    `gatsby-plugin-modal-routing`
+    `gatsby-plugin-modal-routing`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -80,7 +80,7 @@ export default function CountryModal(props) {
   }, [props])
 
   return (
-    <ModalRoutingContext.Consumer>
+    < ModalRoutingContext.Consumer >
       {({ modal, closeTo }) => (
         <div>
           {modal ? <Link to={closeTo}>Close</Link> : <Link to="/">Close</Link>}
@@ -88,6 +88,6 @@ export default function CountryModal(props) {
           {country.name}
         </div>
       )}
-    </ModalRoutingContext.Consumer>
+    </ ModalRoutingContext.Consumer >
   )
 }
