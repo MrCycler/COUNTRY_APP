@@ -10,7 +10,7 @@ const BlankDiv = styled.div`
   min-height: calc(100vh - 255.8px);
   display: flex;
   flex-wrap: wrap;
-  align-content: center !important;
+  align-content: center;
   justify-content: space-around;
   gap: 10px;
   @media (min-width: 800px) {

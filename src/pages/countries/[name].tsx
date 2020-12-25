@@ -259,7 +259,3 @@ export default function CountryModal(props) {
     </ModalRoutingContext.Consumer>
   )
 }
-
-/*   
-<CountryLabel>{"Bloque económico: "+country.regionalBlocs[0].name+" ("+country.regionalBlocs[0].acronym+")"}</CountryLabel>
-{modal ? <Link to={closeTo}>Close</Link> : <Link to="/">Close</Link>} */

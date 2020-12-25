@@ -3,7 +3,7 @@
 ```npm install```
 1.  **Para ejecutar en desarrollo (localmente)**
 ```gatsby develop```
-2.  **Para hacer compilar el proyecto**
+2.  **Para compilar el proyecto**
 ```gatsby build```
 ## 💫 Despliegue
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
