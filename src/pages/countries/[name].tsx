@@ -214,27 +214,27 @@ export default function CountryModal(props) {
                 <CountryLabel>
                   <b>Códigos Telefónicos: </b>
                   {country.callingCodes
-                    .map(callingCode => callingCode.name)
+                    .map(callingCode => " "+callingCode.name)
                     .toString()}
                 </CountryLabel>
                 <CountryLabel>
                   <b>Dominios Web: </b>
                   {country.topLevelDomains
-                    .map(topLevelDomain => topLevelDomain.name)
+                    .map(topLevelDomain => " "+topLevelDomain.name)
                     .toString()}
                 </CountryLabel>
 
                 <CountryLabel>
                   <b>Lenguajes: </b>
                   {country.officialLanguages
-                    .map(officialLanguage => officialLanguage.name)
+                    .map(officialLanguage => " "+officialLanguage.name)
                     .toString()}
                 </CountryLabel>
 
                 <CountryLabel>
                   <b>Sinónimos: </b>
                   {country.alternativeSpellings
-                    .map(alternativeSpelling => alternativeSpelling.name)
+                    .map(alternativeSpelling => " "+alternativeSpelling.name)
                     .toString()}
                 </CountryLabel>
 
