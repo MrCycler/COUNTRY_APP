@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+//import AOS from 'aos';
+//import 'aos/dist/aos.css';
 
-AOS.init();
+//AOS.init();
+
+/*data-aos="fade-up"
+        data-aos-delay="50"
+        data-aos-duration="1500" */
 
 const CardImage = styled.img`
   width: 150px;
@@ -21,9 +25,7 @@ export default function CountryCard(props) {
       <CardImage
         src={props.image}
         alt="MIT"
-        data-aos="fade-up"
-        data-aos-delay="50"
-        data-aos-duration="1500"
+        
       />
 
   )
