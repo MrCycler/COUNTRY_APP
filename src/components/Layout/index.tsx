@@ -8,13 +8,13 @@ import Footer from "./LayoutComponents/Footer"
 
 const BaseDiv = styled.div`
   text-align: center;
-  width:100%;
+  width: 100%;
 `
 
 export default function Layout(props) {
   return (
     <>
-   <Navbar />
+      <Navbar />
       <BaseDiv>{props.children}</BaseDiv>
       <Footer />
     </>

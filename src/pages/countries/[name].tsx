@@ -4,11 +4,11 @@ import React from "react"
 import styled from "styled-components"
 
 import { graphql, useStaticQuery, Link } from "gatsby"
-import { Redirect } from '@reach/router'
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing"
 
 import Navbar from "../../components/Layout/LayoutComponents/Navbar"
 import Footer from "../../components/Layout/LayoutComponents/Footer"
+import ErrorDiv from "../../components/ErrorDiv"
 
 const CountryInfoDiv = styled.div`
   margin-top: 1rem;
@@ -138,9 +138,7 @@ export default function CountryModal(props) {
     const result = data.countriesapi.Country.filter(({ alpha2Code }) => {
       return alpha2Code === props.name
     })
-    if (!result[0]) {
-      return  <Redirect to={`/404`} />
-    }
+    
     setCountry(result[0])
   }, [props])
 
@@ -150,7 +148,7 @@ export default function CountryModal(props) {
         <>
           {modal ? <></> : <Navbar />}
 
-          <CountryInfoDiv>
+          {country?<CountryInfoDiv>
             <ControlDiv>
               {modal ? (
                 <Link to={closeTo}>
@@ -250,6 +248,8 @@ export default function CountryModal(props) {
               </CountryLabel>
             </div>
           </CountryInfoDiv>
+          :<ErrorDiv />}
+
           {modal ? <></> : <Footer />}
         </>
       )}

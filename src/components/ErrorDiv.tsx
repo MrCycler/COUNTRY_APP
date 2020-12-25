@@ -10,7 +10,7 @@ const BlankDiv = styled.div`
   min-height: calc(100vh - 255.8px);
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: center !important;
   justify-content: space-around;
   gap: 10px;
   @media (min-width: 800px) {
@@ -26,6 +26,8 @@ const ErrorMsg = styled.h2`
 const ErrorImage = styled.img`
   width: 80px;
   height: 80px;
+  margin-left:auto;
+  margin-right:auto;
 `
 
 export default function ErrorDiv() {
